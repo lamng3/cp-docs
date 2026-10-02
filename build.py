@@ -14,7 +14,8 @@ NAV = [
     ("graph.html", "Graph"),
     ("math.html", "Math"),
     ("strings.html", "Strings"),
-    ("various.html", "Various"),
+    ("dynamic-programming.html", "Dynamic programming"),
+    ("databases.html", "Databases"),
 ]
 
 FOOTER = (
@@ -304,7 +305,7 @@ TOPICS = [
         ],
     ),
     (
-        "various",
+        "dynamic-programming",
         "gold",
         "Dynamic programming",
         [
@@ -315,13 +316,27 @@ TOPICS = [
         ],
     ),
     (
-        "various",
+        "databases",
+        "advanced",
+        "Filters",
+        [
+            ("notebook/databases/data_structures/bloomfilter.h", "bloomfilter.h", "Bloom filter."),
+        ],
+    ),
+    (
+        "databases",
+        "advanced",
+        "Skip list",
+        [
+            ("notebook/databases/data_structures/skiplist.h", "skiplist.h", "Skip list."),
+            ("notebook/databases/data_structures/utils/hash.h", "hash.h", "String hash used by the skip list."),
+        ],
+    ),
+    (
+        "databases",
         "advanced",
         "Caches",
         [
-            ("notebook/databases/data_structures/bloomfilter.h", "bloomfilter.h", "Bloom filter."),
-            ("notebook/databases/data_structures/skiplist.h", "skiplist.h", "Skip list."),
-            ("notebook/databases/data_structures/utils/hash.h", "hash.h", "String hash factory."),
             ("notebook/databases/eviction/fifo.h", "fifo.h", "FIFO eviction."),
             ("notebook/databases/eviction/lru.h", "lru.h", "LRU eviction."),
             ("notebook/databases/eviction/lfu.h", "lfu.h", "LFU eviction."),
@@ -366,18 +381,33 @@ PAGES = {
         "strings",
         "Gold string snippets.",
     ),
-    "various": (
-        "various.html",
-        "Various",
-        "Dynamic programming and cache structures.",
-        "various",
-        "What does not sit in the other folders.",
+    "dynamic-programming": (
+        "dynamic-programming.html",
+        "Dynamic programming",
+        "DP writeups, tree DP, and longest increasing subsequence.",
+        "dynamic-programming",
+        "Gold dynamic programming snippets.",
+    ),
+    "databases": (
+        "databases.html",
+        "Databases",
+        "Bloom filters, a skip list, and cache eviction.",
+        "databases",
+        "Filters, a skip list, and cache eviction.",
     ),
 }
 
 
 def main():
-    for old in ["general.html", "bronze.html", "silver.html", "gold.html", "plat.html", "advanced.html"]:
+    for old in [
+        "general.html",
+        "bronze.html",
+        "silver.html",
+        "gold.html",
+        "plat.html",
+        "advanced.html",
+        "various.html",
+    ]:
         path = ROOT / old
         if path.exists():
             path.unlink()
@@ -393,7 +423,8 @@ def main():
         "graph": "DSU, tours, jumps, and connectivity.",
         "math": "Modular arithmetic.",
         "strings": "Hashing and tries.",
-        "various": "Dynamic programming and caches.",
+        "dynamic-programming": "Writeups, tree DP, and LIS.",
+        "databases": "Filters, a skip list, and caches.",
     }
     for key, (filename, title, _desc, _kicker, _lede) in PAGES.items():
         cards.append(
