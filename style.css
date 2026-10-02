@@ -262,6 +262,19 @@ th, td {
 .card strong { display: block; color: var(--ink); }
 .card span { color: var(--muted); font-size: 0.95rem; }
 
+.tag {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+}
+
 footer.site {
   max-width: 40rem;
   margin: 0 auto;
