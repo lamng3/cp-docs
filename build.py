@@ -71,7 +71,7 @@ def page(filename, title, description, kicker, lede, body):
 
 
 def section(title, level, items):
-    tag = f' <span class="tag">{level}</span>' if level else ""
+    tag = f' <span class="tag">[{level}]</span>' if level else ""
     rows = "\n".join(
         f"<li>{link(path, name)}. {blurb}</li>" for path, name, blurb in items
     )
