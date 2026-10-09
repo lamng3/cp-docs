@@ -334,6 +334,12 @@ TOPICS = [
                 [("python/databases/data_structures/BloomFilter.py", "BloomFilter.py", "The same filter in Python.")],
             ),
             (
+                "notebook/databases/data_structures/countminsketch.h",
+                "countminsketch.h",
+                "Count-min sketch with seeded hashes, merge, and top k.",
+                [("python/databases/data_structures/CountMinSketch.py", "CountMinSketch.py", "The same sketch in Python.")],
+            ),
+            (
                 "notebook/databases/data_structures/cuckoofilter.h",
                 "cuckoofilter.h",
                 "Cuckoo filter with fingerprints, kicks, and deletes.",
