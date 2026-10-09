@@ -334,6 +334,7 @@ TOPICS = [
         "Skip list",
         [
             ("notebook/databases/data_structures/skiplist.h", "skiplist.h", "Skip list."),
+            ("python/databases/data_structures/Skiplist.py", "Skiplist.py", "The same structure in Python."),
             ("notebook/databases/data_structures/utils/hash.h", "hash.h", "String hash used by the skip list."),
         ],
     ),
