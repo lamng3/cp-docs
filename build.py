@@ -4,7 +4,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-REPO = "https://github.com/lamng3/competitive-programming-setup/blob/main"
+REPO = "https://github.com/lamng3/competitive-programming-notebook/blob/main"
 LEVELS = ["silver", "gold", "platinum", "advanced"]
 
 NAV = [
@@ -20,7 +20,7 @@ NAV = [
 
 FOOTER = (
     "Notebook notes, grouped like KACTL. "
-    f'Code: <a href="https://github.com/lamng3/competitive-programming-setup">competitive-programming-setup</a>.'
+    f'Code: <a href="https://github.com/lamng3/competitive-programming-notebook">competitive programming notebook</a>.'
 )
 
 
@@ -441,7 +441,7 @@ def main():
         "Overview",
         "Competitive programming templates grouped by topic, with a level tag on each one.",
         "Notebook",
-        "Snippets from competitive-programming-setup, grouped the way KACTL groups them. A tag on each topic is the level.",
+        "Snippets from the competitive programming notebook, grouped the way KACTL groups them. A tag on each topic is the level.",
         """
 <nav class="toc"><strong>On this page</strong><ol><li><a href="#topics">Topics</a></li></ol></nav>
 <p>Within a topic page, silver comes before gold, then platinum, then advanced.</p>
