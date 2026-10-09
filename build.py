@@ -71,11 +71,18 @@ def page(filename, title, description, kicker, lede, body):
     (ROOT / filename).write_text(html, encoding="utf-8")
 
 
+def item_html(item):
+    # (path, name, blurb) or (path, name, blurb, [sub items]) for an indented list under it
+    path, name, blurb, *sub = item
+    html = f"<li>{link(path, name)}. {blurb}"
+    if sub:
+        html += "\n<ul>\n" + "\n".join(item_html(s) for s in sub[0]) + "\n</ul>\n"
+    return html + "</li>"
+
+
 def section(title, level, items):
     tag = f' <span class="tag">[{level}]</span>' if level else ""
-    rows = "\n".join(
-        f"<li>{link(path, name)}. {blurb}</li>" for path, name, blurb in items
-    )
+    rows = "\n".join(item_html(item) for item in items)
     return f"<h2>{title}{tag}</h2>\n<ul>\n{rows}\n</ul>\n"
 
 
@@ -320,11 +327,30 @@ TOPICS = [
         "advanced",
         "Filters",
         [
-            ("notebook/databases/data_structures/bloomfilter.h", "bloomfilter.h", "Bloom filter."),
+            (
+                "notebook/databases/data_structures/bloomfilter.h",
+                "bloomfilter.h",
+                "Bloom filter.",
+                [("python/databases/data_structures/BloomFilter.py", "BloomFilter.py", "The same filter in Python.")],
+            ),
             (
                 "notebook/databases/data_structures/cuckoofilter.h",
                 "cuckoofilter.h",
                 "Cuckoo filter with fingerprints, kicks, and deletes.",
+                [("python/databases/data_structures/CuckooFilter.py", "CuckooFilter.py", "The same filter in Python.")],
+            ),
+        ],
+    ),
+    (
+        "databases",
+        "advanced",
+        "Hash",
+        [
+            (
+                "notebook/databases/data_structures/utils/hash.h",
+                "hash.h",
+                "String hashes, mixers, and a rolling hash.",
+                [("python/databases/data_structures/utils/hash.py", "hash.py", "The string hashes in Python.")],
             ),
         ],
     ),
@@ -333,10 +359,12 @@ TOPICS = [
         "advanced",
         "Skip list",
         [
-            ("notebook/databases/data_structures/skiplist.h", "skiplist.h", "Skip list."),
-            ("python/databases/data_structures/Skiplist.py", "Skiplist.py", "The same structure in Python."),
-            ("notebook/databases/data_structures/utils/hash.h", "hash.h", "String hash used by the skip list."),
-            ("python/databases/data_structures/utils/hash.py", "hash.py", "The same string hashes in Python."),
+            (
+                "notebook/databases/data_structures/skiplist.h",
+                "skiplist.h",
+                "Skip list.",
+                [("python/databases/data_structures/Skiplist.py", "Skiplist.py", "The same structure in Python.")],
+            ),
         ],
     ),
     (
@@ -398,9 +426,9 @@ PAGES = {
     "databases": (
         "databases.html",
         "Databases",
-        "Bloom and cuckoo filters, a skip list, and cache eviction.",
+        "Bloom and cuckoo filters, hashes, a skip list, and cache eviction.",
         "databases",
-        "Filters, a skip list, and cache eviction.",
+        "Filters, hashes, a skip list, and cache eviction.",
     ),
 }
 
@@ -431,7 +459,7 @@ def main():
         "math": "Modular arithmetic.",
         "strings": "Hashing and tries.",
         "dynamic-programming": "Writeups, tree DP, and LIS.",
-        "databases": "Filters, a skip list, and caches.",
+        "databases": "Filters, hashes, a skip list, and caches.",
     }
     for key, (filename, title, _desc, _kicker, _lede) in PAGES.items():
         cards.append(

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Databases — notebook</title>
-<meta name="description" content="Bloom and cuckoo filters, a skip list, and cache eviction.">
+<meta name="description" content="Bloom and cuckoo filters, hashes, a skip list, and cache eviction.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
 <main id="content">
 <p class="kicker">databases</p>
 <h1>Databases</h1>
-<p class="lede">Filters, a skip list, and cache eviction.</p>
+<p class="lede">Filters, hashes, a skip list, and cache eviction.</p>
 <h2>Caches <span class="tag">[advanced]</span></h2>
 <ul>
 <li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/eviction/fifo.h"><code>fifo.h</code></a>. FIFO eviction.</li>
@@ -31,15 +31,32 @@
 </ul>
 <h2>Filters <span class="tag">[advanced]</span></h2>
 <ul>
-<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/data_structures/bloomfilter.h"><code>bloomfilter.h</code></a>. Bloom filter.</li>
-<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/data_structures/cuckoofilter.h"><code>cuckoofilter.h</code></a>. Cuckoo filter with fingerprints, kicks, and deletes.</li>
+<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/data_structures/bloomfilter.h"><code>bloomfilter.h</code></a>. Bloom filter.
+<ul>
+<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/python/databases/data_structures/BloomFilter.py"><code>BloomFilter.py</code></a>. The same filter in Python.</li>
+</ul>
+</li>
+<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/data_structures/cuckoofilter.h"><code>cuckoofilter.h</code></a>. Cuckoo filter with fingerprints, kicks, and deletes.
+<ul>
+<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/python/databases/data_structures/CuckooFilter.py"><code>CuckooFilter.py</code></a>. The same filter in Python.</li>
+</ul>
+</li>
+</ul>
+<h2>Hash <span class="tag">[advanced]</span></h2>
+<ul>
+<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/data_structures/utils/hash.h"><code>hash.h</code></a>. String hashes, mixers, and a rolling hash.
+<ul>
+<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/python/databases/data_structures/utils/hash.py"><code>hash.py</code></a>. The string hashes in Python.</li>
+</ul>
+</li>
 </ul>
 <h2>Skip list <span class="tag">[advanced]</span></h2>
 <ul>
-<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/data_structures/skiplist.h"><code>skiplist.h</code></a>. Skip list.</li>
+<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/data_structures/skiplist.h"><code>skiplist.h</code></a>. Skip list.
+<ul>
 <li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/python/databases/data_structures/Skiplist.py"><code>Skiplist.py</code></a>. The same structure in Python.</li>
-<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/notebook/databases/data_structures/utils/hash.h"><code>hash.h</code></a>. String hash used by the skip list.</li>
-<li><a href="https://github.com/lamng3/competitive-programming-notebook/blob/main/python/databases/data_structures/utils/hash.py"><code>hash.py</code></a>. The same string hashes in Python.</li>
+</ul>
+</li>
 </ul>
 
 </main>
