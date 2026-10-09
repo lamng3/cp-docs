@@ -321,6 +321,11 @@ TOPICS = [
         "Filters",
         [
             ("notebook/databases/data_structures/bloomfilter.h", "bloomfilter.h", "Bloom filter."),
+            (
+                "notebook/databases/data_structures/cuckoofilter.h",
+                "cuckoofilter.h",
+                "Cuckoo filter with fingerprints, kicks, and deletes.",
+            ),
         ],
     ),
     (
@@ -391,7 +396,7 @@ PAGES = {
     "databases": (
         "databases.html",
         "Databases",
-        "Bloom filters, a skip list, and cache eviction.",
+        "Bloom and cuckoo filters, a skip list, and cache eviction.",
         "databases",
         "Filters, a skip list, and cache eviction.",
     ),
